@@ -13,8 +13,8 @@ Requisitos de software e hardware para executar esse projeto de automação:
 * Java 1.8 SDK
 * Junit 4.13
 * Selenium 3.141.59
-* ChromeDriver ultima versão
-* Maven ultima versão
+* ChromeDriver 81.0.4044.69
+* Maven 3.5
 
 # CLONE O PROJETO PARA SUA MÁQUINA LOCAL
 
