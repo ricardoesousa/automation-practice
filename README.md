@@ -1,4 +1,4 @@
-# Sistema - AUTOMATION PRACTICE
+# SISTEMA - AUTOMATION PRACTICE
 Projeto desenvolvido com proposito de uma avaliação
 
 # TESTE
