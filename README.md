@@ -24,7 +24,7 @@ git clone https://github.com/ricardoesousa/automation-practice.git
 
 # COMO EXECUTAR OS TESTES
 
-Utilize uma IDE de sua preferencia, recomendado: eclipse ou Intelij;
+Utilize uma IDE de sua preferencia, recomendado: eclipse ou Intellij;
 
 Abra o projeto na IDE;
 
@@ -32,5 +32,4 @@ Execute o código.
 
 OBS: o Código está em Driver.java
 
-Lembre-se, na linha 38 é necessário que o e-mail seja alterado, para que seja feito um novo cadastro!
-Projeto desenvolvido com proposito de uma avaliação
+Lembre-se, é necessário que o e-mail seja alterado para que seja feito um novo cadastro!
