@@ -25,7 +25,7 @@ public class PurchaseTest extends BaseTest {
         product.confirmProduct();
         assertTrue(cart.validateProduct("Printed Dress"));
         cart.confirmShoppingCart();
-        login.createNewAccount("testestetesy7tyte45h67g6t7e@teste.com.br");
+        login.createNewAccount("testestetesy7tyte45h6778tg79g6t7e@teste.com.br");
         register.fillPersonalInformation("Ricardo", "Sousa", "12345");
         register.fillAddress("Rua Teste, 123","Teste","New York","11111","United States","+(1)(425) 555-0100","Lar");
         register.confirmRegistration();
