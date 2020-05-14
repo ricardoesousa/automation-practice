@@ -1,3 +1,5 @@
+package hook;
+
 public interface DefaultProperties {
 
     int TIME_OUT = 5;

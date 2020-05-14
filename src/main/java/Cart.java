@@ -1,21 +1,25 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import static org.junit.Assert.*;
 
-public class Cart extends BaseTest{
+public class Cart extends BaseTest {
 
-    private By lblProduct = (By.cssSelector("#order-detail-content .product-name a"));
-    private By btnProceedToCheckOut = (By.cssSelector(".columns-container a[title='Proceed to checkout']"));
+    @FindBy(css="#order-detail-content .product-name a")
+    private WebElement lnkProduct;
+
+    @FindBy(css=".columns-container a[title='Proceed to checkout']")
+    private WebElement btnProceedToCheckOut;
 
     public boolean validateProduct (String valProduct) {
-        String txtProduct = getDriver().findElement(lblProduct).getText();
+        String txtProduct = lnkProduct.getText();
         assertEquals(valProduct, txtProduct);
         return true;
     }
 
     public void confirmShoppingCart () {
-        getDriver().findElement(btnProceedToCheckOut).click();
+        btnProceedToCheckOut.click();
     }
 
 }

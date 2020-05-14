@@ -1,12 +1,17 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class Login extends BaseTest{
+public class Login extends BaseTest {
 
-    private By txtEmailAddress = (By.cssSelector("#email_create"));
-    private By btnCreateAnAccount = (By.cssSelector("#SubmitCreate"));
+    @FindBy(css="#email_create")
+    private WebElement txtEmailAddress;
+
+    @FindBy(css="#SubmitCreate")
+    private WebElement btnCreateAnAccount;
 
     public void createNewAccount (String email) {
-        getDriver().findElement(txtEmailAddress).sendKeys(email);
-        getDriver().findElement(btnCreateAnAccount).click();
+        txtEmailAddress.sendKeys(email);
+        btnCreateAnAccount.click();
     }
 }

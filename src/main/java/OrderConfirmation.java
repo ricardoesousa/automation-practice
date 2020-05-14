@@ -1,13 +1,16 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import static org.junit.Assert.assertEquals;
 
 public class OrderConfirmation extends BaseTest {
 
-    private By lblYourOrderOnMyStoreIsComplete = (By.cssSelector("p.alert.alert-success"));
+    @FindBy(css="p.alert.alert-success")
+    private WebElement txtYourOrderOnMyStoreIsComplete;
 
     public boolean validateOrder (String valOrder) {
-        String txtOrder = getDriver().findElement(lblYourOrderOnMyStoreIsComplete).getText();
+        String txtOrder = txtYourOrderOnMyStoreIsComplete.getText();
         assertEquals(valOrder, txtOrder);
         return true;
     }

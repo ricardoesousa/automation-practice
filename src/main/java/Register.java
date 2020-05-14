@@ -1,40 +1,65 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class Register extends BaseTest {
 
-    private By btnGenderMr = (By.cssSelector("#id_gender1"));
-    private By txtFirstName = (By.cssSelector("#customer_firstname"));
-    private By txtLastName = (By.cssSelector("#customer_lastname"));
-    private By txtPassword = (By.cssSelector("#passwd"));
-    private By txtAddress = (By.cssSelector("#address1"));
-    private By txtCity = (By.cssSelector("#city"));
-    private By txtState = (By.cssSelector("#id_state"));
-    private By txtPostCode = (By.cssSelector("#postcode"));
-    private By txtCountry = (By.cssSelector("#id_country"));
-    private By txtPhoneMobile = (By.cssSelector("#phone_mobile"));
-    private By txtAlias = (By.cssSelector("#alias"));
-    private By btnRegister = (By.cssSelector("#submitAccount"));
+    @FindBy(css="#id_gender1")
+    private WebElement rdoGenderMr;
+
+    @FindBy(css="#customer_firstname")
+    private WebElement txtFirstName;
+
+    @FindBy(css="#customer_lastname")
+    private WebElement txtLastName;
+
+    @FindBy(css="#passwd")
+    private WebElement txtPassword;
+
+    @FindBy(css="#address1")
+    private WebElement txtAddress;
+
+    @FindBy(css="#city")
+    private WebElement txtCity;
+
+    @FindBy(css="#id_state")
+    private WebElement txtState;
+
+    @FindBy(css="#postcode")
+    private WebElement txtPostCode;
+
+    @FindBy(css="#id_country")
+    private WebElement txtCountry;
+
+    @FindBy(css="#phone_mobile")
+    private WebElement txtPhoneMobile;
+
+    @FindBy(css="#alias")
+    private WebElement txtAlias;
+
+    @FindBy(css="#submitAccount")
+    private WebElement btnRegister;
 
     public void fillPersonalInformation (String firstName, String lastName, String password) {
-        getDriver().findElement(btnGenderMr).click();
-        getDriver().findElement(txtFirstName).sendKeys(firstName);
-        getDriver().findElement(txtLastName).sendKeys(lastName);
-        getDriver().findElement(txtPassword).sendKeys(password);
+        rdoGenderMr.click();
+        txtFirstName.sendKeys(firstName);
+        txtLastName.sendKeys(lastName);
+        txtPassword.sendKeys(password);
     }
 
     public void fillAddress (String address, String city, String state, String postCode, String country, String phoneMobile, String alias) {
-        getDriver().findElement((txtAddress)).sendKeys(address);
-        getDriver().findElement((txtCity)).sendKeys(city);
-        getDriver().findElement((txtState)).sendKeys(state);
-        getDriver().findElement((txtPostCode)).sendKeys(postCode);
-        getDriver().findElement((txtCountry)).sendKeys(country);
-        getDriver().findElement((txtPhoneMobile)).sendKeys(phoneMobile);
-        getDriver().findElement((txtAlias)).clear();
-        getDriver().findElement((txtAlias)).sendKeys(alias);
+        txtAddress.sendKeys(address);
+        txtCity.sendKeys(city);
+        txtState.sendKeys(state);
+        txtPostCode.sendKeys(postCode);
+        txtCountry.sendKeys(country);
+        txtPhoneMobile.sendKeys(phoneMobile);
+        txtAlias.clear();
+        txtAlias.sendKeys(alias);
     }
 
     public void confirmRegistration () {
-        getDriver().findElement((btnRegister)).click();
+        btnRegister.click();
     }
 
 }

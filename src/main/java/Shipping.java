@@ -1,13 +1,18 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class Shipping extends BaseTest{
+public class Shipping extends BaseTest {
 
-    private By btnTermsOfService = (By.cssSelector("#cgv"));
-    private By btnProceedToCheckOut = (By.cssSelector("button[name='processCarrier']"));
+    @FindBy(css="#cgv")
+    private WebElement chkTermsOfService;
+
+    @FindBy(css="button[name='processCarrier']")
+    private WebElement btnProceedToCheckOut;
 
     public void confirmShipping () {
-        getDriver().findElement(btnTermsOfService).click();
-        getDriver().findElement(btnProceedToCheckOut).click();
+        chkTermsOfService.click();
+        btnProceedToCheckOut.click();
     }
 
 }

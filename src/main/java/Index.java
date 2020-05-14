@@ -1,8 +1,10 @@
+import hook.BaseTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class Index extends BaseTest {
 
-    private By lblProduct;
+    private WebElement lnkProduct;
 
     public void accessApplication () {
         getDriver().get(URL_BASE);
@@ -10,8 +12,8 @@ public class Index extends BaseTest {
 
     public void selectProduct (String productChoosed)
     {
-        lblProduct = (By.cssSelector("ul[id='homefeatured'] a[class='product-name'][title='" + productChoosed + "']"));
-        getDriver().findElement(lblProduct).click();
+        lnkProduct = getDriver().findElement(By.cssSelector("ul[id='homefeatured'] a[class='product-name'][title='" + productChoosed + "']"));
+        lnkProduct.click();
     }
 
 }

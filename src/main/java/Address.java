@@ -1,20 +1,25 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import static org.junit.Assert.assertEquals;
 
 public class Address extends BaseTest {
 
-    private By txtDeliveryAddress = (By.cssSelector("#address_delivery > li.address_address1.address_address2"));
-    private By btnProceedToCheckOut = (By.cssSelector("button[name='processAddress']"));
+    @FindBy (css="#address_delivery > li.address_address1.address_address2")
+    private WebElement txtDeliveryAddress;
+
+    @FindBy (css="button[name='processAddress']")
+    private WebElement btnProceedToCheckOut;
 
     public boolean validateAddress (String valAddress) {
-        String txtAddress = getDriver().findElement(txtDeliveryAddress).getText();
+        String txtAddress = txtDeliveryAddress.getText();
         assertEquals(valAddress, txtAddress);
         return true;
     }
 
     public void confirmAddress () {
-        getDriver().findElement(btnProceedToCheckOut).click();
+        btnProceedToCheckOut.click();
     }
 
 }

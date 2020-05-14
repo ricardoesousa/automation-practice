@@ -1,11 +1,14 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class OrderSummary extends BaseTest {
 
-    private By btnIConfirmMyOrder = (By.cssSelector("#columns button[type='submit']"));
+    @FindBy(css="#columns button[type='submit']")
+    private WebElement btnIConfirmMyOrder;
 
     public void confirmOrder () {
-        getDriver().findElement(btnIConfirmMyOrder).click();
+        btnIConfirmMyOrder.click();
     }
 
 }

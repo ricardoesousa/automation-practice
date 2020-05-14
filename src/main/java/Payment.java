@@ -1,19 +1,24 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import static org.junit.Assert.assertEquals;
 
 public class Payment extends BaseTest {
 
-    private By txtTotalPrice = (By.cssSelector("#total_price"));
-    private By btnPayByCheck = (By.cssSelector(".cheque"));
+    @FindBy(css="#total_price")
+    private WebElement txtTotalPrice;
+
+    @FindBy(css=".cheque")
+    private WebElement btnPayByCheck;
 
     public boolean validateTotalPrice (String valPrice) {
-        String txtPrice = getDriver().findElement(txtTotalPrice).getText();
+        String txtPrice = txtTotalPrice.getText();
         assertEquals(valPrice, txtPrice);
         return true;
     }
     public void selectPaymentMethod() {
-        getDriver().findElement(btnPayByCheck).click();
+        btnPayByCheck.click();
     }
 
 }

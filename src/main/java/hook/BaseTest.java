@@ -1,3 +1,5 @@
+package hook;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.After;
@@ -18,7 +20,7 @@ public class BaseTest implements DefaultProperties {
     public void Init() {
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(DefaultProperties.TIME_OUT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 

@@ -1,13 +1,18 @@
-import org.openqa.selenium.By;
+import hook.BaseTest;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class Product extends BaseTest{
+public class Product extends BaseTest {
 
-    private By btnAddToCart = (By.cssSelector("#add_to_cart"));
-    private By btnProceedToCheckOut = (By.cssSelector("#layer_cart a"));
+    @FindBy (css="#add_to_cart")
+    private WebElement btnAddToCart;
+
+    @FindBy (css="#layer_cart a")
+    private WebElement btnProceedToCheckOut;
 
     public void confirmProduct () {
-        getDriver().findElement(btnAddToCart).click();
-        getDriver().findElement(btnProceedToCheckOut).click();
+        btnAddToCart.click();
+        btnProceedToCheckOut.click();
     }
 
 }
